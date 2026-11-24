@@ -117,7 +117,6 @@ class MainWindow(QMainWindow):
     def _change_mode(self, index: int) -> None:
         advanced = index == 1
         for key, label in self.system_labels.items():
-            label.parentWidget().layout().itemAt(0) if False else None
             label.setVisible(advanced or key in {"Operating system", "Processor", "Architecture"})
         self.status.setText("Advanced mode" if advanced else "Basic mode")
 
